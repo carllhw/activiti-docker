@@ -1,4 +1,4 @@
-FROM tomcat:9-jdk11-adoptopenjdk-openj9
+FROM tomcat:9-jdk8-adoptopenjdk-openj9
 
 ENV ACTIVITI_VERSION 5.21.0
 ENV MYSQL_CONNECTOR_JAVA_VERSION 5.1.49
@@ -42,6 +42,5 @@ RUN wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${M
 	rm -rf /tmp/mysql-connector-java.zip /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}
 
 ADD assets /assets
-RUN cp /assets/config/tomcat/tomcat-users.xml ${CATALINA_HOME}/conf/
 
-CMD ["/assets/init"]
+CMD ["/assets/init.sh"]

@@ -2,12 +2,6 @@
 set -e
 set -x
 
-# configure tomcat admin user/password
-TOMCAT_ADMIN_USER=${TOMCAT_ADMIN_USER:-admin}
-TOMCAT_ADMIN_PASSWORD=${TOMCAT_ADMIN_PASSWORD:-admin}
-sed 's,{{TOMCAT_ADMIN_USER}},'"${TOMCAT_ADMIN_USER}"',g' -i ${CATALINA_HOME}/conf/tomcat-users.xml
-sed 's,{{TOMCAT_ADMIN_PASSWORD}},'"${TOMCAT_ADMIN_PASSWORD}"',g' -i ${CATALINA_HOME}/conf/tomcat-users.xml
-
 # mysql db
 DB_TYPE=${DB_TYPE:-}
 DB_HOST=${DB_HOST:-}
