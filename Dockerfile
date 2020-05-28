@@ -1,6 +1,6 @@
 FROM tomcat:9-jdk8-adoptopenjdk-openj9
 
-ENV ACTIVITI_VERSION 5.21.0
+ENV ACTIVITI_VERSION 5.22.0
 ENV MYSQL_CONNECTOR_JAVA_VERSION 5.1.49
 
 # Add mirror source
